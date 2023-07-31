@@ -7,7 +7,6 @@ export const Header = () => {
       <nav>
         <Link to="/">Home Page</Link>
         <Link to="movies">Movies Page</Link>
-        <Link to="test">Test Page</Link>
       </nav>
     </Container>
   );

@@ -21,7 +21,9 @@ export const Container = styled.div`
   padding: 0 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+
   gap: 12px;
   padding: 8px 0;
   margin-bottom: 16px;
