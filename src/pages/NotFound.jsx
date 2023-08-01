@@ -1,4 +1,4 @@
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <main
       style={{
@@ -6,7 +6,7 @@ export const NotFound = () => {
         placeItems: 'center',
       }}
     >
-      <h1>Sorry, wrong url.</h1>
+      <h1>Sorry, wrong URL.</h1>
       <img
         src="https://i.gifer.com/7VE.gif"
         alt=""
@@ -19,3 +19,5 @@ export const NotFound = () => {
     </main>
   );
 };
+
+export default NotFound;

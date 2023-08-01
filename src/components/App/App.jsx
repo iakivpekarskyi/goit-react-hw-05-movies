@@ -1,11 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import { HomePage } from '../../pages/HomePage';
-import { Movies } from '../../pages/MoviesPage';
-import { NotFound } from '../../pages/NotFound';
+import HomePage from '../../pages/HomePage';
+import Movies from '../../pages/MoviesPage';
+import NotFound from '../../pages/NotFound';
+import Layout from 'components/Layout/Layout';
 
-import { Layout } from 'components/Layout/Layout';
-
-export const App = () => {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -16,3 +15,5 @@ export const App = () => {
     </Routes>
   );
 };
+
+export default App;

@@ -1,8 +1,10 @@
-export const Movies = () => {
+const Movies = () => {
   return (
     <main>
-      <h1>Movies</h1>
+      <h1>Movies Page</h1>
       <p></p>
     </main>
   );
 };
+
+export default Movies;
