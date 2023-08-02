@@ -1,9 +1,24 @@
+import MovieDetailsPage from './MovieDetailsPage';
+
 const Movies = () => {
   return (
-    <main>
+    <div>
       <h1>Movies Page</h1>
-      <p></p>
-    </main>
+      <div
+        style={{
+          width: '800px',
+          height: '200px',
+          background: 'tomato',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: '20px',
+          fontWeight: 'bold',
+        }}
+      ></div>
+      <MovieDetailsPage />
+    </div>
   );
 };
 
