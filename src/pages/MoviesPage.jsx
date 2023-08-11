@@ -1,25 +1,8 @@
 import MovieDetailsPage from './MovieDetailsPage';
+import { PageContainer } from '../components/PageContainer/PageContainer.styled';
 
-const Movies = () => {
-  return (
-    <div>
-      <h1>Movies Page</h1>
-      <div
-        style={{
-          width: '800px',
-          height: '200px',
-          background: 'tomato',
-          color: 'white',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '20px',
-          fontWeight: 'bold',
-        }}
-      ></div>
-      <MovieDetailsPage />
-    </div>
-  );
+const MoviesPage = () => {
+  return <PageContainer></PageContainer>;
 };
 
-export default Movies;
+export default MoviesPage;

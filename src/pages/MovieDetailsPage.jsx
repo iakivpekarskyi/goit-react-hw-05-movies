@@ -5,6 +5,7 @@ const MovieDetailsPage = () => {
   return (
     <div>
       <h2>MovieDetailsPage</h2>
+
       <ul>
         <li>
           <Link to="cast"> Cast</Link>

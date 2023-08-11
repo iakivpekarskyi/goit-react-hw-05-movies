@@ -1,12 +1,13 @@
+import { PageContainer } from '../components/PageContainer/PageContainer.styled';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
+    <PageContainer>
       <div
         style={{
           width: '800px',
           height: '200px',
-          background: 'blue',
+          background: 'pink',
           color: 'white',
           display: 'flex',
           justifyContent: 'center',
@@ -15,7 +16,7 @@ const HomePage = () => {
           fontWeight: 'bold',
         }}
       ></div>
-    </div>
+    </PageContainer>
   );
 };
 
