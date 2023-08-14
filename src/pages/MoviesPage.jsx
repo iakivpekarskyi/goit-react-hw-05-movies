@@ -1,4 +1,3 @@
-import MovieDetailsPage from './MovieDetailsPage';
 import { PageContainer } from '../components/PageContainer/PageContainer.styled';
 
 const MoviesPage = () => {

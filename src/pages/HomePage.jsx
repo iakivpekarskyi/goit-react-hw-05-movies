@@ -1,21 +1,32 @@
-import { PageContainer } from '../components/PageContainer/PageContainer.styled';
+import HomePageList from 'components/HomePageList/HomePageList';
+import {
+  PageContainer,
+  CenteredHeading,
+} from '../components/PageContainer/PageContainer.styled';
+import { useEffect, useState } from 'react';
+import { getTrending } from '../services/TMDB_API';
 
 const HomePage = () => {
+  const [filmList, setFilmList] = useState([]);
+
+  useEffect(() => {
+    async function asyncWrapper() {
+      try {
+        const filmList = await getTrending();
+        setFilmList(filmList);
+      } catch (error) {
+        console.log('error');
+      }
+    }
+    asyncWrapper();
+
+    return () => {};
+  }, []);
+
   return (
     <PageContainer>
-      <div
-        style={{
-          width: '800px',
-          height: '200px',
-          background: 'pink',
-          color: 'white',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: '20px',
-          fontWeight: 'bold',
-        }}
-      ></div>
+      <CenteredHeading>Trending today</CenteredHeading>
+      <HomePageList filmList={filmList} linkTo="movies/" />
     </PageContainer>
   );
 };

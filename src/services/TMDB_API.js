@@ -28,7 +28,7 @@ export async function getMovieByName(query) {
 export async function getMovieById(id) {
   try {
     const response = await axios.get(`/movie/${id}`);
-    return response.data.results;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
@@ -47,8 +47,8 @@ export async function getMovieCast(id) {
 export async function getMovieReviews(id) {
   try {
     const response = await axios.get(`/movie/${id}/reviews`);
-    const cast = response.data.reviews;
-    return cast;
+    const reviews = response.data.results;
+    return reviews;
   } catch (error) {
     console.error(error);
   }
