@@ -25,8 +25,10 @@ const HomePage = () => {
 
   return (
     <PageContainer>
-      <CenteredHeading>Trending today</CenteredHeading>
-      <HomePageList filmList={filmList} linkTo="movies/" />
+      <div>
+        <CenteredHeading>Trending today</CenteredHeading>
+        <HomePageList filmList={filmList} linkTo="movies/" />
+      </div>
     </PageContainer>
   );
 };

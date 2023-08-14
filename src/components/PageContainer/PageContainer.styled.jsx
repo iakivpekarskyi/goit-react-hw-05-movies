@@ -8,9 +8,8 @@ export const PageContainer = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 32px;
+  padding: 12px;
   display: flex;
   justify-content: center;
-
   height: 100vh;
 `;
