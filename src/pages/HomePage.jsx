@@ -1,8 +1,5 @@
 import HomePageList from 'components/HomePageList/HomePageList';
-import {
-  PageContainer,
-  CenteredHeading,
-} from '../components/PageContainer/PageContainer.styled';
+import { PageContainer } from '../components/PageContainer/PageContainer.styled';
 import { useEffect, useState } from 'react';
 import { getTrending } from '../services/TMDB_API';
 
@@ -26,7 +23,6 @@ const HomePage = () => {
   return (
     <PageContainer>
       <div>
-        <CenteredHeading>Trending today</CenteredHeading>
         <HomePageList filmList={filmList} linkTo="movies/" />
       </div>
     </PageContainer>

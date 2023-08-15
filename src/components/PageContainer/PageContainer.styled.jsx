@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 
-export const CenteredHeading = styled.h1`
-  text-align: center;
-`;
-
 export const PageContainer = styled.div`
-  max-width: 1200px;
+  max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
   padding: 12px;

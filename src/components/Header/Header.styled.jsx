@@ -4,20 +4,22 @@ import { NavLink } from 'react-router-dom';
 
 export const Link = styled(NavLink)`
   padding: 18px 36px;
-  font-size: 26px;
-  border-radius: 15px;
+  margin: 20px;
+  font-size: 21px;
+  border-radius: 16px;
+  border: 0.5px solid #b3b2b2;
   text-decoration: none;
-  color: black;
+  color: #474545;
   font-weight: 300;
   transition: box-shadow 250ms linear, transform 250ms linear;
-  &.active {
-    color: #ffffff;
-    background-color: #ff5656;
+  &:active {
+    color: #222020;
+    background-color: #6d6d6d;
   }
-  &.hover {
+  &:hover {
     transform: scale(1.1);
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 `;
 
@@ -31,8 +33,8 @@ export const Container = styled.div`
   flex-wrap: wrap;
 
   padding: 8px 0;
-  margin-bottom: 26px;
-  border-bottom: 1px solid #282828;
+
+  border-bottom: 0.5px solid #626262;
 
   > nav {
     display: flex;

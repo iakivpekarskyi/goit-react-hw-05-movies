@@ -5,7 +5,14 @@ const HomePageList = ({ filmList }) => {
   return (
     <FilmList>
       {filmList &&
-        filmList.map(({ title, id }) => <FilmCard key={id} {...filmList} />)}
+        filmList.map(({ title, id, location, poster_path }) => (
+          <FilmCard
+            title={title}
+            key={id}
+            poster_path={poster_path}
+            location={location}
+          />
+        ))}
     </FilmList>
   );
 };

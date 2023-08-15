@@ -1,14 +1,17 @@
 import React from 'react';
+import { FilmCardContainer, FilmImage, LinkStyled } from './FilmCard.styled';
 
-export const FilmCard = ({ poster_path, title }) => {
+export const FilmCard = ({ title, id, poster_path, location }) => {
   return (
-    <li>
-      <div>
-        <img src={poster_path} alt={title} />
-        <div>
-          <h2>{title}</h2>
-        </div>
-      </div>
-    </li>
+    <FilmCardContainer>
+      {}
+      <LinkStyled to={`/movies/${id}`} state={{ from: location }}>
+        <FilmImage
+          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+          alt={title}
+        />
+        {title}
+      </LinkStyled>
+    </FilmCardContainer>
   );
 };
