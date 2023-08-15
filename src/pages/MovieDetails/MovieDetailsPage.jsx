@@ -1,14 +1,12 @@
 import { PageContainer } from 'components/PageContainer/PageContainer.styled';
-import React, { useEffect, useState, Suspense } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useParams } from 'react-router-dom';
-import { getMovieById } from '../services/TMDB_API';
+import { getMovieById } from '../../services/TMDB_API';
 import { MovieCard, Picture, Section } from './MovieDetailsPage.styled';
-import { Loader } from 'components/Loader/Loader';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
-
   const { poster_path, title } = movie;
 
   useEffect(() => {
@@ -32,7 +30,7 @@ const MovieDetailsPage = () => {
         </MovieCard>
       </Section>
       <Section>
-        <h3>Details</h3>
+        <h3>Additional information</h3>
         <ul>
           <li>
             <Link to="cast">Cast</Link>
@@ -42,11 +40,9 @@ const MovieDetailsPage = () => {
           </li>
         </ul>
       </Section>
-      <Suspense fallback={<Loader />}>
-        <Section>
-          <Outlet />
-        </Section>
-      </Suspense>
+      <Section>
+        <Outlet />
+      </Section>
     </PageContainer>
   );
 };
