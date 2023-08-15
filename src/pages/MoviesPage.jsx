@@ -1,4 +1,3 @@
-import { PageContainer } from '../components/PageContainer/PageContainer.styled';
 import SearchBar from 'components/SearchBar/SearchBar';
 import HomePageList from 'components/HomePageList/HomePageList';
 import { useEffect, useState } from 'react';

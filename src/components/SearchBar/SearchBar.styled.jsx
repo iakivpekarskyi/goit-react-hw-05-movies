@@ -8,7 +8,7 @@ export const SearchForm = styled(Form)`
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #fff;
   border: 2px solid #d1d1d1;
   border-radius: 16px;

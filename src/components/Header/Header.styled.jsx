@@ -4,13 +4,14 @@ import { NavLink } from 'react-router-dom';
 
 export const Link = styled(NavLink)`
   padding: 18px 36px;
-  margin: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
   font-size: 21px;
   border-radius: 16px;
   border: 0.5px solid #b3b2b2;
   text-decoration: none;
   color: #474545;
-  font-weight: 300;
+  font-weight: 600;
   transition: box-shadow 250ms linear, transform 250ms linear;
   &:active {
     color: #222020;
