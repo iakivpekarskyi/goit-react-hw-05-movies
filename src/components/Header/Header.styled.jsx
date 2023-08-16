@@ -27,6 +27,7 @@ export const Link = styled(NavLink)`
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 20px;
   padding: 0 16px;
   display: flex;
   align-items: center;

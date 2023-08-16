@@ -12,12 +12,10 @@ const HomePage = () => {
         const filmList = await getTrending();
         setFilmList(filmList);
       } catch (error) {
-        console.log('error');
+        console.log('Sorry something went wrong. Try again later.');
       }
     }
     asyncWrapper();
-
-    return () => {};
   }, []);
 
   return (

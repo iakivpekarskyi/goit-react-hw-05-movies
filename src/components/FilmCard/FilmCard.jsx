@@ -1,7 +1,9 @@
 import React from 'react';
 import { FilmCardContainer, FilmImage, LinkStyled } from './FilmCard.styled';
+import { useLocation } from 'react-router-dom';
 
-export const FilmCard = ({ title, id, poster_path, location }) => {
+export const FilmCard = ({ title, id, poster_path }) => {
+  const location = useLocation();
   return (
     <FilmCardContainer>
       {}
