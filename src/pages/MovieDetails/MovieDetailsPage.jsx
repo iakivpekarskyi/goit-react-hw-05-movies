@@ -13,11 +13,12 @@ import { Loader } from 'components/Loader/Loader';
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
-  const { title } = movie;
+  const { title, poster_path } = movie;
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
   const backLinkHref = useRef(location.state?.from ?? '/');
+
   useEffect(() => {
     async function getMovieDetails() {
       try {
@@ -25,7 +26,7 @@ const MovieDetailsPage = () => {
         setMovie(movieDetails);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching movie details:', error);
+        console.error('Error fetching movie details SORRY:(', error);
         setLoading(false);
       }
     }
@@ -38,6 +39,14 @@ const MovieDetailsPage = () => {
         <Section>
           <MovieCard>
             {loading ? <p>Loading...</p> : title && <h3>{title}</h3>}
+            <Picture
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+                  : `https://fakeimg.pl/300x500?text=no+image+;(`
+              }
+              alt={`${title}`}
+            />
           </MovieCard>
         </Section>
         <Section>
