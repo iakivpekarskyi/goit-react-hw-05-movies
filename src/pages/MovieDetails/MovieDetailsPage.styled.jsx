@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Section = styled.div`
   max-width: 1000px;
   padding: 20px 0;
-  /* border-top: 2px solid #888; */
+  margin: 0 auto;
 `;
 
 export const MovieCard = styled.div`
@@ -14,10 +14,6 @@ export const MovieCard = styled.div`
 export const Picture = styled.img`
   width: 250px;
   height: fit-content;
-
-  /* @media (max-width: 768px) {
-    width: 150px;
-  } */
 `;
 
 export const StyledLink = styled(Link)`
@@ -33,14 +29,3 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   border: 1px solid #383838;
 `;
-
-// export const Meta = styled.div`
-//   padding: 20px;
-// `;
-
-// export const Title = styled.h3`
-//   margin: 0;
-//   font-size: 24px;
-//   text-align: center;
-//   text-decoration: underline;
-// `;
