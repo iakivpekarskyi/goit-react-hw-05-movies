@@ -1,8 +1,8 @@
 import SearchBar from 'components/SearchBar/SearchBar';
-import HomePageList from 'components/HomePageList/HomePageList';
 import { useEffect, useState } from 'react';
 import { getMovieByName } from 'services/TMDB_API';
 import { useSearchParams } from 'react-router-dom';
+import FilmList from 'components/FilmList/FilmList';
 
 const MoviesPage = () => {
   const [filmList, setFilmList] = useState([]);
@@ -28,7 +28,7 @@ const MoviesPage = () => {
   return (
     <div>
       <SearchBar handleSearch={handleSearch} />
-      <HomePageList filmList={filmList} />
+      <FilmList filmList={filmList} />
     </div>
   );
 };

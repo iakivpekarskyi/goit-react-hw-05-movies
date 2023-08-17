@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const FilmList = styled.ul`
+export const FilmListStyled = styled.ul`
   margin-left: auto;
   margin-right: auto;
   padding: 30px;

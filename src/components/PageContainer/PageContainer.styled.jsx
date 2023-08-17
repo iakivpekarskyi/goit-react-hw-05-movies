@@ -5,7 +5,5 @@ export const PageContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding: 12px;
-  display: flex;
-  justify-content: center;
   height: 100vh;
 `;

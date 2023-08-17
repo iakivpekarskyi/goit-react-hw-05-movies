@@ -1,7 +1,7 @@
-import HomePageList from 'components/HomePageList/HomePageList';
 import { PageContainer } from '../components/PageContainer/PageContainer.styled';
 import { useEffect, useState } from 'react';
 import { getTrending } from '../services/TMDB_API';
+import FilmList from 'components/FilmList/FilmList';
 
 const HomePage = () => {
   const [filmList, setFilmList] = useState([]);
@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <PageContainer>
       <div>
-        <HomePageList filmList={filmList} linkTo="movies/" />
+        <FilmList filmList={filmList} />
       </div>
     </PageContainer>
   );

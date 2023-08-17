@@ -3,17 +3,25 @@ import { useEffect, useState, Suspense, useRef } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from '../../services/TMDB_API';
 import {
+  Data,
+  DetailsBtn,
+  LinkContainer,
+  LinkList,
+  LinkStyled,
+  Meta,
   MovieCard,
   Picture,
   Section,
   StyledLink,
+  Title,
 } from './MovieDetailsPage.styled';
 import { Loader } from 'components/Loader/Loader';
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState({});
   const { movieId } = useParams();
-  const { title, poster_path } = movie;
+  const { poster_path, title, vote_average, overview, genres, release_date } =
+    movie;
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
@@ -35,37 +43,48 @@ const MovieDetailsPage = () => {
   return (
     <>
       <StyledLink to={backLinkHref.current}>Go back</StyledLink>
-      <PageContainer>
-        <Section>
-          <MovieCard>
-            {loading ? <p>Loading...</p> : title && <h3>{title}</h3>}
-            <Picture
-              src={
-                poster_path
-                  ? `https://image.tmdb.org/t/p/w300/${poster_path}`
-                  : `https://fakeimg.pl/300x500?text=no+image+;(`
-              }
-              alt={`${title}`}
-            />
-          </MovieCard>
-        </Section>
-        <Section>
-          <h3>Additional information</h3>
-          <ul>
+
+      <Section>
+        <MovieCard>
+          <Picture
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+                : `https://fakeimg.pl/300x500?text=no+image+;(`
+            }
+            alt={`${title}`}
+          />
+          <Data>
+            <Title>{`${title}`} </Title>
+
+            <Meta>
+              <p>User Score: {`${Math.round(vote_average * 10)}`}%</p>
+              <h4>{release_date}</h4>
+              <h4>Overview</h4>
+              <p>{`${overview}`}</p>
+              <h4>Genres</h4>
+              {genres && <p>{genres.map(({ name }) => name).join(' ')}</p>}
+            </Meta>
+          </Data>
+        </MovieCard>
+      </Section>
+      <Section>
+        <LinkContainer>
+          <LinkList>
             <li>
-              <Link to="cast">Cast</Link>
+              <LinkStyled to="cast">Cast</LinkStyled>
             </li>
             <li>
-              <Link to="reviews">Reviews</Link>
+              <LinkStyled to="reviews">Reviews</LinkStyled>
             </li>
-          </ul>
+          </LinkList>
+        </LinkContainer>
+      </Section>
+      <Suspense fallback={<Loader />}>
+        <Section>
+          <Outlet />
         </Section>
-        <Suspense fallback={<Loader />}>
-          <Section>
-            <Outlet />
-          </Section>
-        </Suspense>
-      </PageContainer>
+      </Suspense>
     </>
   );
 };

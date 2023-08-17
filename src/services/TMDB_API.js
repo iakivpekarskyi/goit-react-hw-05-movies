@@ -21,6 +21,7 @@ export async function getMovieByName(query) {
 
 export async function getMovieById(id) {
   const response = await axios.get(`/movie/${id}`);
+
   return response.data;
 }
 

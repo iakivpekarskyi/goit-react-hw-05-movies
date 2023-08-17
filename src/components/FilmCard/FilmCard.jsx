@@ -1,18 +1,14 @@
 import React from 'react';
-import { FilmCardContainer, FilmImage, LinkStyled } from './FilmCard.styled';
-import { useLocation } from 'react-router-dom';
+import { FilmCardContainer, FilmImage } from './FilmCard.styled';
 
-export const FilmCard = ({ title, id, poster_path }) => {
-  const location = useLocation();
+export const FilmCard = ({ filmDetails }) => {
   return (
     <FilmCardContainer>
-      <LinkStyled to={`/movie/${id}`} state={{ from: location }}>
-        <FilmImage
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-          alt={title}
-        />
-        {title}
-      </LinkStyled>
+      <FilmImage
+        src={`https://image.tmdb.org/t/p/w300${filmDetails.poster_path}`}
+        alt={filmDetails.title}
+      />
+      <p>{filmDetails.title}</p>
     </FilmCardContainer>
   );
 };
