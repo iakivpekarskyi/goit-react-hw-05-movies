@@ -21,7 +21,7 @@ const Reviews = () => {
 
   return (
     <section>
-      {
+      {reviews.length ? (
         <ul>
           {reviews.map(({ id, author, content }) => (
             <li key={id}>
@@ -30,7 +30,9 @@ const Reviews = () => {
             </li>
           ))}
         </ul>
-      }
+      ) : (
+        <Text> No reviews yet. Be the first.</Text>
+      )}
     </section>
   );
 };
