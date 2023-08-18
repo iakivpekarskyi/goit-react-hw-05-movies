@@ -1,6 +1,6 @@
 import { FilmCard } from 'components/FilmCard/FilmCard';
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { FilmLink, FilmListStyled } from './FilmList.styled';
 
 const FilmList = ({ filmList }) => {
