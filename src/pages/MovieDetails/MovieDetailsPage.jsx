@@ -1,10 +1,8 @@
-import { PageContainer } from '../../components/PageContainer/PageContainer.styled';
 import { useEffect, useState, Suspense, useRef } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieById } from '../../services/TMDB_API';
 import {
   Data,
-  DetailsBtn,
   LinkContainer,
   LinkList,
   LinkStyled,
@@ -36,6 +34,8 @@ const MovieDetailsPage = () => {
       } catch (error) {
         console.error('Error fetching movie details SORRY:(', error);
         setLoading(false);
+      } finally {
+        setLoading(true);
       }
     }
     getMovieDetails();
@@ -43,6 +43,7 @@ const MovieDetailsPage = () => {
   return (
     <>
       <StyledLink to={backLinkHref.current}>Go back</StyledLink>
+      {loading && <Loader />}
 
       <Section>
         <MovieCard>
