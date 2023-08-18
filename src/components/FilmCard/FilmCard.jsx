@@ -5,7 +5,11 @@ export const FilmCard = ({ filmDetails }) => {
   return (
     <FilmCardContainer>
       <FilmImage
-        src={`https://image.tmdb.org/t/p/w300${filmDetails.poster_path}`}
+        src={
+          filmDetails.poster_path
+            ? `https://image.tmdb.org/t/p/w300${filmDetails.poster_path}`
+            : `https://fakeimg.pl/300x500?text=no+image+;(`
+        }
         alt={filmDetails.title}
       />
       <p>{filmDetails.title}</p>

@@ -27,7 +27,15 @@ const Cast = () => {
         {cast.map(({ id, name, profile_path }) => (
           <ActorCard key={id}>
             <div>
-              <Profile src={ImageUrl + profile_path} alt={name} width={100} />
+              <Profile
+                src={
+                  profile_path
+                    ? ImageUrl + profile_path
+                    : `https://fakeimg.pl/300x450?text=no+image+;(`
+                }
+                alt={name}
+                width={100}
+              />
               <p> {name}</p>
             </div>
           </ActorCard>

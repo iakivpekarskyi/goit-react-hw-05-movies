@@ -34,8 +34,6 @@ const MovieDetailsPage = () => {
       } catch (error) {
         console.error('Error fetching movie details SORRY:(', error);
         setLoading(false);
-      } finally {
-        setLoading(true);
       }
     }
     getMovieDetails();
